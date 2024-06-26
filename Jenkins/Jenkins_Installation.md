@@ -47,3 +47,8 @@ sudo update-alternatives --config java
 sudo systemctl restart jenkins
 sudo systemctl status jenkins.service
 ```
+
+## More Reference:
+```
+https://www.digitalocean.com/community/tutorials/how-to-set-up-continuous-integration-pipelines-in-jenkins-on-ubuntu-16-04
+```
