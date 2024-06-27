@@ -48,7 +48,56 @@ sudo systemctl restart jenkins
 sudo systemctl status jenkins.service
 ```
 
-## More Reference:
+# Configure Jenkins with SSL using an Nginx Reverse Proxy
+## Configuring Nginx
 ```
-https://www.digitalocean.com/community/tutorials/how-to-set-up-continuous-integration-pipelines-in-jenkins-on-ubuntu-16-04
+sudo nano /etc/nginx/sites-available/default
+
+. . . 
+server {
+        # SSL Configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        access_log            /var/log/nginx/jenkins.access.log;
+        error_log            /var/log/nginx/jenkins.error.log;
+}
+```
+comment out the default try_files line which, as written, will return a 404 error before the request reaches Jenkins:
+```
+. . .
+           location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                # try_files $uri $uri/ =404;        }
+. . . 
+```
+Be sure to substitute your SSL-secured domain name in the proxy_redirect:
+```
+Location /  
+. . .
+           location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                # try_files $uri $uri/ =404;
+                include /etc/nginx/proxy_params;
+                proxy_pass          http://localhost:8080;
+                proxy_read_timeout  90s;
+                # Fix potential "It appears that your reverse proxy set up is broken" error.
+                proxy_redirect      http://localhost:8080 https://your.ssl.domain.name;
+           }
+
+sudo nginx -t
+```
+## Configuring Jenkins
+```
+sudo nano /etc/default/jenkins
+
+. . .
+JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --httpListenAddress=127.0.0.1"
+
+sudo systemctl restart jenkins
+sudo systemctl status jenkins
+sudo systemctl restart nginx
+sudo systemctl status nginx
 ```
