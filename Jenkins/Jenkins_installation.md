@@ -1,5 +1,5 @@
 # Jenkins Installation
-## Add GPG Key using Command
+## Add GPG Key Using Command
 ```
 wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 ```
@@ -27,17 +27,17 @@ sudo systemctl enable jenkins
 sudo systemctl status jenkins.service
 sudo service jenkins stop
 ```
-### Get Detailed Information about every Logs for debugging purpose
+### Get Detailed Information about Every Logs for Debugging Purpose
 ```
 journalctl -xeu jenkins.service --no-pager
 ```
-## Find and Copy the first time password of Jenkins Server
+## Find and Copy the First Time Password of Jenkins Server
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 Finally: Access the Jenkins URL: HTTP://YOUR_IP:8080
 
-# Example Issue: JAVA version Issue: 
+# Example Issue: JAVA Version Issue: 
 Jun 26 04:02:11 midasvps jenkins[46421]: Running with Java 11 from /usr/lib/jvm/java-11-openjdk-amd64, which is older than the minimum required version (Java 17).
 Jun 26 04:02:11 midasvps jenkins[46421]: Supported Java versions are: [17, 21]
 ```

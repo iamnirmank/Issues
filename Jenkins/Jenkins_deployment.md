@@ -1,26 +1,26 @@
 ## Add Credentials
 Create the secret key
 ```
-Profile>Developer Settings>Personal access tokens>Tokens(classic)
+Profile > Developer Settings > Personal access tokens > Tokens(classic)
 ```
 Add to the Jenkins Credentials
 ```
-Manage Jenkins>credentials>DOmains(global)>Username with password (Password == Secret Key)
+Manage Jenkins > credentials>DOmains(global) > Username with password (Password == Secret Key)
 ```
 
-## Add continuous integration item
+## Add Project Item
 ```
 + New Item > Freestyle project
 ```
 
-## Configure the project
+## Configure the Project
 ```
 Source Code Management > Git > 
 - Repository URL and Credentials
 - Branch Name Build Triggers (GitHub hook trigger for GITScm polling) 
 - Specify the Command without using Sudo
 ```
-## Making Not to use sudo
+## Making Not to Use Sudo
 ```
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins

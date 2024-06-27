@@ -12,7 +12,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-## Check your webserver
+## Check Oour Webserver
 ```
 sudo systemctl stop nginx
 sudo systemctl start nginx
@@ -35,7 +35,7 @@ sudo add-apt-repository --remove ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install certbot python3-certbot-nginx
 ```
-## Setting up Nginx
+## Setting Up Nginx
 ```
 sudo nano /etc/nginx/sites-available/default
 .....
