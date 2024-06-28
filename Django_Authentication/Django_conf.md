@@ -105,5 +105,7 @@ from rest_framework.permissions import IsAuthenticated
 = [IsAuthenticated]
 ```
 ## Note
+```
 Authentication Classes: Determine who the user is by validating their credentials.
 Permission Classes: Determine what the authenticated user can do, i.e., whether they have the right to access or perform actions on the requested resource.
+```
