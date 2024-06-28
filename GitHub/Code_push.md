@@ -1,4 +1,5 @@
 ## Basic Commands
+Note: First Create a .gitignore file
 ```
 git init
 git add .
