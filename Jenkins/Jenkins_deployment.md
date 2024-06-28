@@ -33,3 +33,64 @@ Build Steps > Execute shell
 docker-compose down
 docker-compose up -d --force-recreate --no-deps --build backend
 ```
+## For Vite+React App Modify vite.config.ts
+```
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import tsconfigPaths from "vite-tsconfig-paths";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname + '/src'),
+    },
+  },
+  plugins: [react(), tsconfigPaths()],
+  server: {
+    host: true,
+    port: 3000,
+    watch: {
+      usePolling: true,
+    },
+  },
+  // https://vitejs.dev/config/#define
+  define: {
+    'process.env': {},
+  },
+});
+
+```
+## For Nextjs Based Webapp next.config.js
+```
+const path = require('path');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+    unoptimized: true,
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+  output: "standalone",
+
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Resolve aliases
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, './src'),
+    };
+
+    return config;
+  },
+};
+
+module.exports = nextConfig;
+```
