@@ -1,3 +1,9 @@
+## Virtual Environment
+```
+python3 -m venv venv
+
+source venv/bin/activate
+```
 ## Install Django
 ```
 pip install django
@@ -9,13 +15,10 @@ django-admin startproject projectname
 ## Create a Django App
 ```
 cd projectname
+```
+And move the venv folder inside the projectname folder
+```
 python manage.py startapp appname
-```
-## Virtual Environment
-```
-python3 -m venv venv
-
-source venv/bin/activate
 ```
 ## Apply Migration
 ```
