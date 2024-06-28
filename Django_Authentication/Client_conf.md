@@ -13,7 +13,7 @@ const res = await axios.post(
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
         }
     );
