@@ -15,8 +15,9 @@ django-admin startproject projectname
 ## Create a Django App
 ```
 cd projectname
-```
+
 And move the venv folder inside the projectname folder
+```
 ```
 python manage.py startapp appname
 ```
