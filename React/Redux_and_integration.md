@@ -1,6 +1,7 @@
 ## Installation
 ```
 npm install @reduxjs/toolkit
+npm i react-redux
 ```
 ## urlConfig.tsx
 ```
