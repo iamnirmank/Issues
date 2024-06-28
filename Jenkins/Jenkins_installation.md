@@ -1,10 +1,7 @@
 # Jenkins Installation
-## Add GPG Key Using Command
+## Add GPG Key and Repository Using Command
 ```
 wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
-```
-### Add Repository
-```
 sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
 ```
 ### Update Source List
@@ -14,6 +11,11 @@ sudo apt-get update
 ### Install Jenkins
 ```
 sudo apt-get install jenkins
+```
+Error While Installing: GPG error: https://pkg.jenkins.io/debian binary/ Release: The following signatures couldn't be verified because the public key is not available:
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
+sudo apt-get update
 ```
 ### Download and add GPG Key
 ```
@@ -25,6 +27,7 @@ sudo apt-key add jenkins.io.key
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sudo systemctl status jenkins.service
+sudo systemctl restart jenkins.service
 sudo service jenkins stop
 ```
 ### Get Detailed Information about Every Logs for Debugging Purpose
@@ -37,9 +40,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 Finally: Access the Jenkins URL: HTTP://YOUR_IP:8080
 
-# Example Issue: JAVA Version Issue: 
-Jun 26 04:02:11 midasvps jenkins[46421]: Running with Java 11 from /usr/lib/jvm/java-11-openjdk-amd64, which is older than the minimum required version (Java 17).
-Jun 26 04:02:11 midasvps jenkins[46421]: Supported Java versions are: [17, 21]
+# Issue During Starting? Do this:
+That error is because of the Java version because Supported Java versions are: [17, 21]
 ```
 sudo apt update
 sudo apt install openjdk-17-jdk
@@ -92,7 +94,6 @@ sudo nginx -t
 ## Configuring Jenkins
 ```
 sudo nano /etc/default/jenkins
-
 . . .
 JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --httpListenAddress=127.0.0.1"
 

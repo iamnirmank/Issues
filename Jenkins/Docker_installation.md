@@ -24,3 +24,28 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo service docker start
 sudo docker run hello-world
 ```
+ # Install Docke Compose
+ ## Install Docker Compose
+ ```
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+## Verify installation
+```
+docker-compose --version
+```
+
+# Add Docker Compose to Jenkins User's PATH
+## Global Path Update
+```
+echo 'export PATH=$PATH:/usr/local/bin' | sudo tee -a /etc/profile
+source /etc/profile
+
+sudo systemctl restart jenkins
+
+```
+## Making Not to Use Sudo
+```
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
+```

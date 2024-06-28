@@ -25,7 +25,7 @@ sudo systemctl enable nginx
 # Securing Nginx
 ## Installing Certbot
 ```
-sudo add-apt-repository ppa:certbot/certbot
+<!-- sudo add-apt-repository ppa:certbot/certbot --> This one is not needed normally.
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
 ```
@@ -37,11 +37,24 @@ sudo apt-get install certbot python3-certbot-nginx
 ```
 ## Setting Up Nginx
 ```
-sudo nano /etc/nginx/sites-available/default
-.....
-server_name jenkins.midasstock.com.np backend.midasstock.com.np training.midasstock.com.np panel.midasstock.com.np web.midasstock.com.np;
-.....
+sudo nano /etc/nginx/sites-available/web.midasstock.com.np
 
+server {
+    listen 80;
+    server_name web.midasstock.com.np;
+
+    location / {
+        proxy_pass http://localhost:3001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+## Enable the Configuration Files
+```
+sudo ln -s /etc/nginx/sites-available/web.midasstock.com.np /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
@@ -51,7 +64,9 @@ sudo ufw allow 'Nginx Full'
 sudo ufw delete allow 'Nginx HTTP'
 sudo ufw status
 
-sudo certbot --nginx -d jenkins.midasstock.com.np -d backend.midasstock.com.np -d training.midasstock.com.np -d panel.midasstock.com.np -d web.midasstock.com.np -v
+sudo certbot --nginx -d web.midasstock.com.np -v
+sudo certbot --nginx -d backend.midasstock.com.np -v
+
 sudo certbot renew --dry-run
 ```
 
