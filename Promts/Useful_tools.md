@@ -4,3 +4,7 @@ Available for on vscode extentions as well
 ```
 https://codegpt.co/
 ```
+## Auto PR and Code Generation
+```
+https://www.fumedev.com/
+```
