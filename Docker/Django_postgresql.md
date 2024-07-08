@@ -1,6 +1,6 @@
 ### docker-compose.yml
 ```
-version 3.8
+version: "3.8"
 name: "image_name"
 services:
     backend_service_name:
