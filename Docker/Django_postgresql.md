@@ -32,10 +32,8 @@ services:
 ```
 ## .dockerignore
 ```
-node_modules
 Dockerfile
 docker-compose.yml
-pnpm-lock.yml
 ```
 ## Commands
 Compose normally, and all the containers inside the image will run automatically:
