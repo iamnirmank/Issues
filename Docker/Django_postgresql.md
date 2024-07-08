@@ -29,3 +29,20 @@ services:
         volumes:
             - ./db:/var/lib/postgresql/data
 ```
+## .dockerignore
+```
+node_modules
+Dockerfile
+docker-compose.yml
+pnpm-lock.yml
+```
+## Commands
+Compose normally, and the container will run automatically:
+```
+docker-compose up
+```
+Detach mode:
+```
+docker-compose up -d
+```
+
