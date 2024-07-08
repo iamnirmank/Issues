@@ -44,4 +44,8 @@ Detach mode:
 ```
 docker-compose up -d
 ```
+## Running at Localhost in Case of Localhost
+```
+HTTP://localhost:4000
+```
 
