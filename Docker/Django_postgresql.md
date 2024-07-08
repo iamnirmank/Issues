@@ -37,7 +37,7 @@ docker-compose.yml
 pnpm-lock.yml
 ```
 ## Commands
-Compose normally, and the container will run automatically:
+Compose normally, and all the containers inside the image will run automatically:
 ```
 docker-compose up
 ```
