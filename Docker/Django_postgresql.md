@@ -36,7 +36,7 @@ Dockerfile
 docker-compose.yml
 ```
 ## Commands
-Compose normally, and all the containers inside the image will run automatically:
+Compose normally, and all the containers inside the image will run automatically (Create image and run):
 ```
 docker-compose up
 ```
@@ -44,8 +44,29 @@ Detach mode:
 ```
 docker-compose up -d
 ```
+Stopping Docker Image
+```
+docker-compose down
+```
+Show the running processes
+```
+docker-compose ps
+```
+Restart
+```
+docker-compose restart service_name
+```
+Stop
+```
+docker-compose stop service_name
+```
+Create only image
+```
+docker-compose build
+```
 ## Running at Localhost in Case of Localhost
 ```
 HTTP://localhost:4000
 ```
+
 
