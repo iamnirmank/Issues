@@ -2,7 +2,11 @@
 ```
 https://www.ashbyhq.com/
 ```
-## Assistant to apply job on behalf of someone
+## Assistant to apply for job on behalf of someone
 ```
 https://www.scale.jobs/
+```
+## AI-Powered Job Search
+```
+https://www.linkedin.com/company/serraio/
 ```
