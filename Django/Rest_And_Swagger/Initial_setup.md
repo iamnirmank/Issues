@@ -81,6 +81,6 @@ if settings.DEBUG:
 ```
 ## Commands
 ```
-python manage.py generateschema --file openapi-schema.yml
-python manage.py collectstatic
+python3 manage.py generateschema --file openapi-schema.yml
+python3 manage.py collectstatic
 ```
