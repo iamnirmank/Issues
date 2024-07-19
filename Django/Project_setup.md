@@ -19,20 +19,20 @@ cd projectname
 And move the venv folder inside the projectname folder
 ```
 ```
-python manage.py startapp appname
+python3 manage.py startapp appname
 ```
 ## Apply Migration
 ```
-python manage.py makemigrations
-python manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 ## Create Superuser for the Django Admin
 ```
-python manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
 ## Start Development Server
 ```
-python manage.py runserver
+python3 manage.py runserver
 ```
 ## Generate requirements.txt
 ```
