@@ -29,3 +29,7 @@ https://letflix.tv/
 https://movies2watch.to/movie
 https://bolly2tolly.me/letter/z
 ```
+## Scraping
+```
+https://www.scrapetable.com/
+```
