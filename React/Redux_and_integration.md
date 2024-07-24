@@ -2,6 +2,7 @@
 ```
 npm install @reduxjs/toolkit
 npm i react-redux
+npm install axios react-toastify
 ```
 ## urlConfig.tsx
 ```
