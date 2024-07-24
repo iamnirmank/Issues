@@ -1,3 +1,7 @@
+## Installation
+```
+pip install pyjwt djangorestframework-simplejwt
+```
 # Auth_utility.py
 ```
 from django.core.mail import EmailMessage
