@@ -1,6 +1,6 @@
 ## Package Innstallation 
 ```
-pip install djangorestframework, drf-yasg
+pip install djangorestframework drf-yasg
 ```
 
 ## Settings.py
