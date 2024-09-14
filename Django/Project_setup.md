@@ -33,6 +33,9 @@ python3 manage.py createsuperuser
 ## Start Development Server
 ```
 python3 manage.py runserver
+
+gunicorn paAI.wsgi:application --bind 0.0.0.0:8000 --workers 3 --access-logfile - --error-logfile - --timeout 120
+
 ```
 ## Generate requirements.txt
 ```
