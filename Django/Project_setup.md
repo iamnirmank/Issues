@@ -36,6 +36,8 @@ python3 manage.py runserver
 
 gunicorn paAI.wsgi:application --bind 0.0.0.0:8000 --workers 3 --access-logfile - --error-logfile - --timeout 120
 
+daphne -b 0.0.0.0 -p 8000 <your_project_name>.asgi:application
+
 ```
 ## Generate requirements.txt
 ```
