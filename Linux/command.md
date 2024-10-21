@@ -11,4 +11,16 @@ xrandr --fb 1366x1536 --output eDP-1 --mode 1366x768 --panning 683x768+0+0 --sca
 ```
 xrandr --output eDP-1 --auto
 ```
-
+## .deb package installation
+```
+sudo dpkg -i package_name.deb
+```
+Dependency Issue fixes
+```
+sudo apt-get install -f
+```
+Installation
+```
+sudo apt update
+sudo apt install ./package_name.deb
+```
