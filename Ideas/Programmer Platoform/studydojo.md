@@ -3,7 +3,6 @@
 https://tldraw.dev/quick-start
 ```
 ![image](https://github.com/user-attachments/assets/f662168a-5d69-4573-a352-c93a75f52bd4)
-```
 ## Course Videos UI Inspiration
 ```
 https://www.revisiondojo.com/videos/f920a02c7139d2d68b78284c2f767b6e
