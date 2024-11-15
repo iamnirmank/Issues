@@ -7,7 +7,7 @@ https://tldraw.dev/quick-start
 ```
 https://www.revisiondojo.com/videos/f920a02c7139d2d68b78284c2f767b6e
 ```
-## AI Tutor Reference\
+## AI Tutor Reference
 ```
 https://www.revisiondojo.com/chat/276c5ed0-7a43-498f-b40f-80c62aa9002a
 ```
